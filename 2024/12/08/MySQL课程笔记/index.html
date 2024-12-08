@@ -1,0 +1,1101 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MySQL课程笔记 | Personal blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>MySQL课程笔记</h1></div><hr><div id="post-content"><h1>MySQL课程笔记</h1>
+<h2 id="数据库基础知识"><a href="#数据库基础知识" class="headerlink" title="数据库基础知识"></a>数据库基础知识</h2>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3>
+<blockquote>
+<ul>
+<li>数据管理技术的发展阶段：人工管理阶段-〉文件系统阶段 -〉 数据库管理阶段</li>
+<li>所谓数据库(DataBase, DB)，是将数据按一定的数据模型组织、描述和存储，具有较小的冗余度，较高的数据独立性和易扩展性，并可为各种用户共享的数据集合。</li>
+<li>数据库系统(DataBase System, DBS)一般由数据库、数据库管理系统(及其开发工具)、应用系统、数据库管理员和用户结构组成</li>
+<li>数据库管理系统（DataBase Management System, DBMS）对收集到的大量数据进行整理、加工、归并、分类、计算、存储等处理，产生新的数据，以便反映事物或现象的本质和特征及其内在联系。</li>
+<li>数据库应用系统(DataBase Application System, DBAS) 数据库应用系统是由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/0?fromModule=lemma_inlink">数据库系统</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/0?fromModule=lemma_inlink">应用程序</a>系统、用户组成的，具体包括：数据库、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/0?fromModule=lemma_inlink">数据库管理系统</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E5%91%98/0?fromModule=lemma_inlink">数据库管理员</a>、硬件平台、软件平台、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/0?fromModule=lemma_inlink">应用软件</a>、应用界面。</li>
+</ul>
+</blockquote>
+<h3 id="结构化查询语言SQL"><a href="#结构化查询语言SQL" class="headerlink" title="结构化查询语言SQL"></a>结构化查询语言SQL</h3>
+<h4 id="SQL概念"><a href="#SQL概念" class="headerlink" title="SQL概念"></a>SQL概念</h4>
+<blockquote>
+<ol>
+<li><strong>结构化查询语言SQL</strong>（Structured Query Language）,SQL语言是用于关系数据库查询的结构化语言，最早由Boyce和Chambedin在1974年提出，称为SEQUEL语言。1976年，IBM公司的San Jose研究所在研制关系数据库管理系统System R时修改为SEQUEL2，即目前的SQL语言。</li>
+<li><strong>SQL-关系型数据库管理系统（RDBMS）</strong>：
+<ul>
+<li>不同的角色（开发者，用户，数据库管理员）使用相同的语言。</li>
+<li>不同的RDBMS使用统一标准的语言。</li>
+<li>SQL使用一种高级的非结构化查询语言。</li>
+<li>坚持 ACID 准则 (原子性，一致性，隔离性，持久性)</li>
+</ul>
+</li>
+<li><strong>NoSQL</strong>- <strong>非关系性数据库</strong>
+<ul>
+<li>采用Key-value方式存储数据。采取最终一致性原则，更加适合互联网数据，但这也可能导致数据丢失。</li>
+</ul>
+</li>
+<li><strong>NewSQL-结合SQL和NoSQL</strong>
+<ul>
+<li>将SQL的ACID保证与NoSQL的可扩展性和高性能相结合，目前大多数NewSQL数据库都是专有软件或仅适用于特定场景，这显然限制了新技术的普及和应用。</li>
+</ul>
+</li>
+</ol>
+<p>主要特点包括：</p>
+<p>（1）综合统一</p>
+<p>（2）高度非过程化</p>
+<p>（3）面向集合的操作方式</p>
+<p>（4）以同一种语法结构提供两种使用方式</p>
+<p>（5）语言简洁，易学易用</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207112432050.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207112432050.png" alt="数据库关系图"></p>
+<h4 id="SQL分类"><a href="#SQL分类" class="headerlink" title="SQL分类"></a>SQL分类</h4>
+<p>SQL 语句，根据其功能，主要分为四类:DDL、DML、DQL、DCL 。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">全称</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DDL</td>
+<td style="text-align:center">Data Definition Language</td>
+<td style="text-align:center">数据定义语言，用来定义数据库对象（数据库，表，字段)</td>
+</tr>
+<tr>
+<td style="text-align:center">DML</td>
+<td style="text-align:center">Data Manipulation Language</td>
+<td style="text-align:center">数据操作语言，用来对数据库表中的数据进行增删改</td>
+</tr>
+<tr>
+<td style="text-align:center">DQL</td>
+<td style="text-align:center">Data Query Language</td>
+<td style="text-align:center">数据查询语言，用来查询数据库中表的记录</td>
+</tr>
+<tr>
+<td style="text-align:center">DCL</td>
+<td style="text-align:center">Data Control Language</td>
+<td style="text-align:center">数据控制语言，用来创建数据库用户、控制数据库的访问权限</td>
+</tr>
+</tbody>
+</table>
+<h4 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h4>
+<blockquote>
+<p>在学习具体的SQL语句之前，先来了解一下SQL语言的通用语法。</p>
+<ol>
+<li>SQL语句可以单行或多行书写,以分号结尾。</li>
+<li>SQL语句可以使用空格/缩进来增强语句的可读性。</li>
+<li>MySQL数据库的SQL语句不区分大小写，关键字建议使用大写。</li>
+<li>注释:<br>
+单行注释:-- 注释内容 或 # 注释内容<br>
+多行注释:/** 注释内容*  */</li>
+</ol>
+</blockquote>
+<p>注：MySQL下载安装教程详见<a target="_blank" rel="noopener" href="https://yjh021.github.io/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">MySQL的安装和使用</a>。</p>
+<h3 id="图形化软件"><a href="#图形化软件" class="headerlink" title="图形化软件"></a>图形化软件</h3>
+<blockquote>
+<p>本笔记所采用的图形化软件为 Navicat 。</p>
+</blockquote>
+<blockquote>
+<p>“Navicat”是一套可创建多个连接的数据库管理工具，用以方便管理 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/MySQL/471251?fromModule=lemma_inlink">MySQL</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Redis/6549233?fromModule=lemma_inlink">Redis</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Oracle/301207?fromModule=lemma_inlink">Oracle</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/PostgreSQL/530240?fromModule=lemma_inlink">PostgreSQL</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SQLite/375020?fromModule=lemma_inlink">SQLite</a>、[SQL Server](<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SQL">https://baike.baidu.com/item/SQL</a> Server/245994?fromModule=lemma_inlink)、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/MariaDB/6466119?fromModule=lemma_inlink">MariaDB</a> 和 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/MongoDB/60411?fromModule=lemma_inlink">MongoDB</a> 等不同类型的数据库，它与 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GaussDB/63064379?fromModule=lemma_inlink">GaussDB</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/OceanBase/3041032?fromModule=lemma_inlink">OceanBase</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/PolarDB/23677557?fromModule=lemma_inlink">PolarDB</a> 以及 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%98%BF%E9%87%8C%E4%BA%91/297128?fromModule=lemma_inlink">阿里云</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%85%BE%E8%AE%AF%E4%BA%91/9905046?fromModule=lemma_inlink">腾讯云</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8D%8E%E4%B8%BA%E4%BA%91/4572949?fromModule=lemma_inlink">华为云</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Amazon/9842534?fromModule=lemma_inlink">Amazon</a> RDS、Amazon Aurora、Amazon Redshift、Microsoft Azure、Oracle Cloud 和 MongoDB Atlas等<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/4626630?fromModule=lemma_inlink">云数据库</a>兼容。它用于创建、管理和维护数据库。Navicat 的功能足以满足专业开发人员的所有需求，但是对<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%8D%E5%8A%A1%E5%99%A8/613818?fromModule=lemma_inlink">数据库服务器</a>初学者来说又简单易操作。Navicat 的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2/6582461?fromModule=lemma_inlink">用户界面</a> (<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GUI/479966?fromModule=lemma_inlink">GUI</a>) 设计良好，以安全且简单的方法创建、组织、访问和共享信息。</p>
+</blockquote>
+<h4 id="Navicat-下载"><a href="#Navicat-下载" class="headerlink" title="Navicat-下载"></a>Navicat 下载</h4>
+<blockquote>
+<ul>
+<li>
+<p>Navicat 下载地址：<a target="_blank" rel="noopener" href="https://www.navicat.com/en/download/navicat-premium">https://www.navicat.com/en/download/navicat-premium</a></p>
+</li>
+<li>
+<p>Navicat 下载完成后，打开安装包，选择接受条款，一直点下一步即可。</p>
+</li>
+<li>
+<p>打开Navicat，连接到MySQL。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2>
+<blockquote>
+<p>数据库设计就是将数据库中的数据对象以及这些数据对象之间关系进行规划和结构化的过程，当数据库比较复杂时我们需要设计数据库</p>
+</blockquote>
+<h3 id="关系数据库设计"><a href="#关系数据库设计" class="headerlink" title="关系数据库设计"></a>关系数据库设计</h3>
+<h4 id="数据的加工"><a href="#数据的加工" class="headerlink" title="数据的加工"></a>数据的加工</h4>
+<blockquote>
+<ul>
+<li>数据是描述事物的符号记录，模型是现实世界的抽象。</li>
+<li>数据模型是数据特征的抽象，包括数据的结构部分，操作部分和约束条件。</li>
+<li>每个事物的无穷特征如何数据化？事物之间错综复杂的关系如何数据化？现实世界直接数据化是不可行的，数据加工是一个逐步转换的过程，会经历<em><strong>现实世界</strong></em>、<em><strong>信息世界</strong></em>和<em><strong>数据世界</strong></em>三个不同层面。</li>
+</ul>
+</blockquote>
+<p><strong>1.现实世界</strong></p>
+<blockquote>
+<p>现实世界是存在于人们头脑之外的客观世界。现实世界存在各种事物，事物与事物之间存在联系，这种联系是由事物本身的性质决定的。</p>
+<p>例如，学校中有教师、学生、课程，教师为学生授课，学生选修课程并取得成绩；图书馆中有图书、管理员和读者，读者借阅图书，管理员对图书和读者进行管理等。</p>
+</blockquote>
+<p><strong>2.信息世界</strong></p>
+<blockquote>
+<ul>
+<li>信息世界是现实世界在人们头脑中的反映，人们把它用文字或符号记载下来，然后用规范化的数据库定义语言来定义描述而构成的一个抽象世界。信息世界实际上是对现实世界的一种抽象化描述。</li>
+<li>信息世界不是简单的对现实世界进行符号化，而是要通过筛选、归纳、总结、命名等抽象化过程形成概念模型，用以表示对现实世界的抽象和描述。</li>
+</ul>
+</blockquote>
+<p><strong>3.数据世界</strong></p>
+<blockquote>
+<p>数据世界又称机器世界，它是将信息世界的内容数据化后的产物，即将信息世界中的概念模型，进一步转换成数据模型所形成的便于计算机处理的数据表现形式。</p>
+</blockquote>
+<h4 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h4>
+<blockquote>
+<ol>
+<li>概念模型:把现实世界转换为信息世界的模型,E-R模型。</li>
+<li>数据模型:把信息世界转化为数据世界使用的模型,关系模型。</li>
+</ol>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207113206885.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207113206885.png" alt="设计数据库关系模型"></p>
+<h4 id="规范化设计"><a href="#规范化设计" class="headerlink" title="规范化设计"></a>规范化设计</h4>
+<blockquote>
+<p>按照规范化设计的方法，考虑数据库及其应用系统开发的全过程，将数据库的设计分为以下6个设计阶段：</p>
+<blockquote>
+<ol>
+<li>
+<p>需求分析、</p>
+</li>
+<li>
+<p>概念设计、</p>
+</li>
+<li>
+<p>逻辑设计、</p>
+</li>
+<li>
+<p>物理设计、</p>
+</li>
+<li>
+<p>数据库实施、</p>
+</li>
+<li>
+<p>数据库运行和维护。</p>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<h3 id="数据库设计步骤"><a href="#数据库设计步骤" class="headerlink" title="数据库设计步骤"></a>数据库设计步骤</h3>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207114552607.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207114552607.png" alt="数据库设计步骤"></p>
+<h4 id="需求分析阶段"><a href="#需求分析阶段" class="headerlink" title="需求分析阶段"></a>需求分析阶段</h4>
+<blockquote>
+<p>需求分析就是根据用户的需求收集数据，是设计数据库的起点。需求分析的结果是否准确反映用户的实际需求，将直接影响到后面各个阶段的设计，并影响到设计结果是否合理和实用。</p>
+<p>需求分析的任务就是收集数据，要尽可能多地收集关于数据库要存储的数据以及将来如何使用这些数据的信息，确保收集到数据库需要存储的全部信息。</p>
+</blockquote>
+<blockquote>
+<p><strong>需求分析的目标</strong>可以参考以下问题：</p>
+<p>（1）有多少数据，数据的来源在哪里，是否有已存在的数据资源？</p>
+<p>（2）必须保存哪些数据，数据是字符、数字或日期型？</p>
+<p>（3）谁使用数据，如何使用？</p>
+<p>（4）数据是否经常修改，如何修改和什么时候修改？</p>
+<p>（5）某个数据是否依赖于另一个数据或被其他数据引用？</p>
+<p>（6）某个信息是否要唯一？</p>
+<p>（7）哪些数据是组织内部的和哪些是外部数据？</p>
+<p>（8）哪些业务活动与数据有关，数据如何支持业务活动？</p>
+<p>（9）数据访问的频度和增长的幅度如何？</p>
+<p>（10）谁可以访问数据，如何保护数据。</p>
+</blockquote>
+<blockquote>
+<p><strong>需求分析的方法</strong>，常用的调查方法：</p>
+<p>（1）跟班作业。通过亲身参加业务工作来了解业务活动的情况。通过这种方法可以比较准确地了解用户的需求，但比较耗费时间。</p>
+<p>（2）开调查会。通过与用户座谈来了解业务活动情况及用户需求。座谈时，参加者和用户之间可以相互启发。</p>
+<p>（3）请专人介绍。</p>
+<p>（4）询问。对某些调查中的问题，可以找专人询问。</p>
+<p>（5）问卷调查。设计调查表请用户填写。如果调查表设计得合理，这种方法是很有效的，也易于为用户所接受。</p>
+<p>（6）查阅记录。查阅与原系统有关的数据记录。</p>
+</blockquote>
+<h4 id="概念设计阶段"><a href="#概念设计阶段" class="headerlink" title="概念设计阶段"></a>概念设计阶段</h4>
+<blockquote>
+<p>概念设计是整个数据库设计的关键，它通过对用户的需求进行综合、归纳与抽象，形成一个独立于具体DBMS的概念模型。</p>
+<p>设计人员完成了数据库设计的第一步，收集到了现实世界中的数据，下一步的工作是将收集到的数据进行分析，找出它们之间的联系，并用E-R图来表示。</p>
+</blockquote>
+<blockquote>
+<p><strong>概念模型的相关概念</strong>：</p>
+<ol>
+<li>
+<p><strong>实体（Entity）</strong>：客观存在并且可以相互区别的事物称为实体。实体可以是具体的事物，也可以是抽象的事件。</p>
+</li>
+<li>
+<p><strong>属性（Attribute）</strong>：描述实体的特性。一个实体可以用若干个属性来描述。</p>
+</li>
+<li>
+<p><strong>主码（Key）</strong>：唯一标识实体的属性或属性的组合。</p>
+</li>
+<li>
+<p><strong>域（Domain）</strong>：属性的取值范围称为该属性的域。</p>
+</li>
+<li>
+<p><strong>实体集（Entity Set）</strong>：具有相同特征和性质的同一类实体的集合称为实体集。例如全体学生、一批图书等。</p>
+</li>
+<li>
+<p><strong>联系（Relationship）</strong>：</p>
+<p>在现实世界中，事物内部以及事物之间是有联系的，这些联系在信息世界中反映为实体（型）内部的联系和实体（型）之间的联系。</p>
+<p>实体内部的联系通常是指组成实体的各属性之间的联系；</p>
+<p>实体之间的联系通常是指不同实体集之间的联系。</p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><em>两个实体之间的联系可以分为</em> <strong>3类</strong>。</p>
+<p>（1）一对一(1:1)联系（One-to-One Relationship）。</p>
+<p>例如，如果一个人只能有一个身份证，一个身份证只能对应一个人，则人和身份证之间具有一对一的联系。</p>
+<p>（2）一对多(1:n)联系（One-to-Many Relationship）。</p>
+<p>例如，一个人可以有多个移动电话号码，但一个电话号码只能卖给一个人。人与移动电话号码之间的联系就是一对多的联系。</p>
+<p>（3）多对多(m:n)联系（Many-to-Many Relationship）。</p>
+<p>例如，一门课程同时可以由若干学生选修，而一个学生同时也可以选修若干门课程，课程与学生之间的联系是多对多的联系。</p>
+</blockquote>
+<blockquote>
+<p><strong>概念模型</strong>是对信息世界的建模，它应当能够全面、准确地描述信息世界，是信息世界的基本概念。</p>
+<p><strong>概念模型</strong>用于建立信息世界的模型，它是独立于计算机系统的模型，强调其语义表达功能，要求概念简单、清晰，易于用户理解，它是现实世界的第1层抽象，是用户和数据库设计人员之间进行交流的工具。</p>
+<p>概念模型的表示方法很多，其中最为著名和使用最为广泛的是P.P.Chen于1976年提出的E-R（Entity-Relationship）模型。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207115838565.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207115838565.png" alt="建模"></p>
+<p><strong>E-R图的组成要素及其画法</strong></p>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207115919329.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207115919329.png" alt="E-R图的组成要素及其画法"></p>
+<blockquote>
+<p><strong>概念结构设计的方法</strong>：</p>
+<p>（1）自顶向下。首先定义全局概念结构的框架，然后逐步细化。</p>
+<p>（2）自底向上。首先定义各局部应用的概念结构，然后将它们集成起来，得到全局概念结构。</p>
+<p>（3）逐步扩张。首先定义最重要的核心概念结构，然后向外扩充，以滚雪球的方式逐步生成其他概念结构，直至总体概念结构。</p>
+<p>（4）混合策略。将自顶向下和自底向上的方法相结合，用自顶向下策略设计一个全局概念结构的框架，以它为框架自底向上设计各局部概念结构。</p>
+<p>最常采用的是混合策略，即自顶向下进行需求分析，然后自底向上设计概念结构。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207122230533.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207122230533.png" alt="混合策略"></p>
+<blockquote>
+<p><strong>概念结构设计的步骤</strong></p>
+<p>（1）进行数据抽象，设计局部E-R模型。<br>
+（2）集成各局部E-R模型，形成全局E-R模型。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207122412013.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207122412013.png" alt="概念结构设计的步骤"></p>
+<blockquote>
+<p><strong>E-R图设计步骤</strong> ：</p>
+<p>对于复杂的系统，E-R图设计通常都应经过以下两个阶段：</p>
+<p>（1）针对每一用户画出该用户信息的局部E—R图，确定该用户视图的实体、属性和联系。需注意的是：能作为属性的就不要作为实体，这有利于E—R图的简化。</p>
+<p>（2）综合局部E—R图，生成总体E—R图。在综合过程中，同名实体只能出现一次，还要去掉不必要的联系，以便消除冗余。一般来说，从总体E—R图必须能导出原来的所有局部视图，包括实体、属性和联系。</p>
+</blockquote>
+<h4 id="逻辑设计阶段"><a href="#逻辑设计阶段" class="headerlink" title="逻辑设计阶段"></a>逻辑设计阶段</h4>
+<blockquote>
+<p>概念设计阶段完成后，下一步进入逻辑设计阶段，即将概念模型转换成某个DBMS所支持的数据模型，并对其进行优化。</p>
+</blockquote>
+<h5 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h5>
+<blockquote>
+<p>数据模型：它是直接面向数据库的逻辑结构，是现实世界的<strong>第2层抽象</strong>。<br>
+数据模型涉及计算机系统和数据库管理系统。数据模型有严格的形式化定义，以便于在计算机系统中实现。</p>
+</blockquote>
+<p><strong>常见数据模型：</strong></p>
+<p><strong>1.层次模型</strong>：用“树”结构来表示数据之间的关系</p>
+<blockquote>
+<p>优点：<br>
+简单，只需很少几条命令就能操纵数据库。<br>
+性能优于关系模型和网状模型。<br>
+提供良好的完整性支持。<br>
+缺点：<br>
+不支持多对多联系，只能通过冗余数据（易产生数据不一致性）或引入虚拟结点来解决。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207123322428.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207123322428.png" alt="层次模型"></p>
+<p><strong>2.网状模型</strong>：用“图”结构来表示数据之间的关系</p>
+<blockquote>
+<p>优点：</p>
+<p>​	能更直接地反映现实世界，效率高。</p>
+<p>缺点：</p>
+<p>​	结构比较复杂，DDL和DML语言复杂。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207141022973.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207141022973.png" alt="网状模型"></p>
+<p><strong>3.关系模型</strong>：用“表”结构（或称关系）来表示数据之间的关系。</p>
+<blockquote>
+<p>优点：</p>
+<p>​	建立在严格的数学概念的基础上，概念单一，数据结构简单、清晰，用户易懂易用。</p>
+<p>​	实体和各类联系都用关系来表示，对数据的检索结果也是关系。</p>
+<p>​	关系模型的存取路径对用户透明，具有更高的数据独立性，更好的安全保密性。</p>
+<p>​	简化了程序员的工作和数据库开发建立的工作，关系模型中的数据联系是靠数据冗余实现的。</p>
+<p>缺点：</p>
+<p>​	存取路径对用户透明导致查询效率往往不如非关系数据模型。</p>
+<p>​	为提高性能，必须对用户的查询请求进行优化从而增加了开发数据库管理系统的难度。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207141127089.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207141127089.png" alt="关系模型"></p>
+<p><strong>E—R</strong>模型到关系模型的转换</p>
+<blockquote>
+<p><strong>把E-R图转换为关系模型可遵循如下原则</strong> ：</p>
+<p>1.对于E—R图中每个<strong>实体集</strong>，都应转换为一个关系，该关系应包括对应实体的全部属性，并应根据关系所表达的语义确定哪个属性或哪几个属性组作为“主关键字”，主关键字用来标识实体。</p>
+<p>2.对于E—R图中的<strong>联系</strong>，情况比较复杂，要根据实体联系方式的不同，采取不同的手段加以实现。</p>
+</blockquote>
+<blockquote>
+<p><strong>转换规则：（必须牢记！！）</strong></p>
+<p>规则1.1 实体类型的转换：将每个实体类型转换成一个关系模式，实体的属性即为关系的属性，实体的标识符即为关系模式的码。</p>
+<p>规则1.2 联系类型的转换：根据不同的联系类型做不同的处理。</p>
+</blockquote>
+<blockquote>
+<p>规则1.2.1 若实体间联系是1∶1，可以在两个实体类型转换成的两个关系模式中任意一个关系模式中加入另一个关系模式的码和联系类型的属性。</p>
+</blockquote>
+<p>【例】将下图所示的含有1∶1联系的E-R图根据上述规则转换为关系模式。</p>
+<blockquote>
+<p>方案1：“负责”与“职工”两关系模式合并。</p>
+<p>职工（<u>职工号</u>，姓名，年龄，产品号）</p>
+<p>产品（<u>产品号</u>，产品名，价格）</p>
+<p>​	或者：</p>
+<p>方案2：“负责”与“产品”两关系模式合并。</p>
+<p>职工（<u>职工号</u>，姓名，年龄）</p>
+<p>产品（<u>产品号</u>，产品名，价格，职工号）</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207145928866.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207145928866.png" alt="1:1"></p>
+<blockquote>
+<p>规则1.2.2 若实体间的联系是1∶<em>n</em>，则在<em>n</em>端实体类型转换成的关系模式中加入1端实体类型的码和联系类型的属性。</p>
+</blockquote>
+<p>【例】将下图所示的含有1∶n联系的E-R图根据上述规则转换为关系模式。</p>
+<blockquote>
+<p>仓库（<u>仓库号</u>，地点，面积）</p>
+<p>产品（<u>产品号</u>，产品名，价格，<u>仓库号</u>，数量）</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207150136781.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207150136781.png" alt="1:n"></p>
+<blockquote>
+<p>规则1.2.3 若实体间联系是<em>m</em>∶<em>n</em>，则将联系类型也转换成关系模式，其属性为两端实体类型的码加上联系类型的属性，而码为两端实体码的组合。</p>
+</blockquote>
+<p>【例】将下图所示的含有m∶n联系的E-R图根据上述规则转换为关系模式。</p>
+<blockquote>
+<p>商店（<u>店号</u>，店名，店址，店经理）</p>
+<p>商品（<u>商品号</u>，商品名，单价，产地）</p>
+<p>经营（<u>店号</u>，<u>商品号</u>，月销售量）</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207150354615.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207150354615.png" alt="m:n"></p>
+<blockquote>
+<p>规则1.2.4  3个或3个以上的实体间的一个多元联系，不管联系类型是何种方法，总是将多元联系类型转换成一个关系模式，其属性为与该联系相连的各实体的码及联系本身的属性，其码为各实体码的组合。</p>
+</blockquote>
+<p>【例】将下图所示的多实体集间含有m∶n联系的E-R图根据上述规则转换为关系模式。</p>
+<blockquote>
+<p>供应商（<u>供应商号</u>，供应商名，地址）</p>
+<p>零件（<u>零件号</u>，零件名，单价）</p>
+<p>产品（<u>产品号</u>，产品名，型号）</p>
+<p>供应（<u>供应商号</u>，<u>零件号</u>，<u>产品号</u>，数量）</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207151251648.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207151251648.png" alt="3个及以上"></p>
+<h4 id="数据库设计规范化"><a href="#数据库设计规范化" class="headerlink" title="数据库设计规范化"></a>数据库设计规范化</h4>
+<blockquote>
+<p>仅有好的RDBMS并不足以避免数据冗余，必须在数据库的设计中创建好的表结构</p>
+<p>关系数据库范式理论是在数据库设计过程中将要依据的准则，数据库结构必须要满足这些准则，才能确保数据的准确性和可靠性。这些准则则被称为规范化形式，即范式。</p>
+<p>Dr E.F.codd 最初定义了规范化的三个级别，范式是具有最小冗余的表结构。这些范式是：</p>
+<blockquote>
+<p>第一范式(1st NF －First Normal Fromate)</p>
+<p>第二范式(2nd NF－Second Normal Fromate)</p>
+<p>第三范式(3rd NF－ Third Normal Fromate)</p>
+</blockquote>
+</blockquote>
+<h5 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h5>
+<blockquote>
+<p>实体之间，实体内部的各个特征之间的相互依赖和制约关系——自然反映到关系数据库中的各关系和关系内部的各属性之间。</p>
+<p>关系是由属性构成，函数依赖就是讲<strong>属性之间的依赖</strong>。</p>
+</blockquote>
+<p><strong>定义1函数依赖：</strong></p>
+<blockquote>
+<p>设有关系模式<em>R</em>(<em>U</em> )，<em>X</em>和<em>Y</em>均为<em>U</em>={<em>A</em>1，<em>A</em>2，…，<em>An</em>}的子集，若对于元素中X上的每个值都有Y上的一个惟一值与之相对应，则称<em>X</em>函数决定<em>Y</em>，或称<em>Y</em>函数依赖于<em>X</em>，记作<em>X</em>→<em>Y</em>，其中<em>X</em>叫做决定因素（Determinant），<em>Y</em>叫做依赖因素（Dependent）。</p>
+</blockquote>
+<blockquote>
+<p>练习：指出学生关系S中存在的函数依赖关系</p>
+<p>S（学号，姓名，班号，班级，课程号，教师，成绩）</p>
+<p><strong>学号</strong> →<strong>姓名</strong>（每个学号只能有一个学生姓名）</p>
+<p><strong>学号</strong> →<strong>班级</strong>（每个学号只能有一个班级）</p>
+<p>（<strong>学号</strong>，<strong>课程号</strong>）→<strong>成绩</strong>（每个学生每门课只有一个成绩）</p>
+</blockquote>
+<p><strong>定义2：部分函数依赖 、完全函数依赖</strong></p>
+<blockquote>
+<p>在关系模式<em>R</em>(<em>U</em> )中，X和Y为属性集U上的子集，若<em>X</em>→<em>Y</em>，并且对于<em>X</em>的任何一个真子集<em>X</em>¢，都有<em>X</em>¢ → <em>Y</em>，则称X部分函数决定Y或<em>Y</em>部分函数依赖<em>X</em>，记作<em>X</em>   <em>Y</em>。</p>
+<p>否则，若不存<em>X</em>的任何一个真子集<em>X</em>¢，使得<em>X</em>¢→<em>Y</em>，则称X完全函数决定Y或 <em>Y</em>完全函数依赖于X， 记作<em>X</em>   <em>Y</em>。</p>
+</blockquote>
+<blockquote>
+<p>练习：指出学生关系S中存在的函数依赖关系是部分依赖还是完全依赖</p>
+<p>S（学号，姓名，班号，班级，课程号，教师，成绩）</p>
+<p>学号 →姓名（完全函数依赖）</p>
+<p>学号 →班级（完全函数依赖）</p>
+<p>（学号，课程号）→成绩（完全函数依赖）</p>
+<p>（<strong>学号</strong>，课程号）→<strong>姓名</strong>（部分函数依赖）</p>
+</blockquote>
+<p><strong>定义3：传递函数依赖</strong></p>
+<blockquote>
+<p>在关系模式<em>R</em>(<em>U</em> )中，<em>X</em>、<em>Y</em>、<em>Z</em>是属性集U上的子集，如果<em>X</em>→<em>Y</em> <em>，**Y</em>→<em>Z</em>，但Y不包含于X，Y不能函数决定X,则存在<em>X</em> → <em>Z</em>。</p>
+</blockquote>
+<blockquote>
+<p>练习：指出学生关系S中存在的函数依赖关系是否存在传递函数依赖</p>
+<p>S（学号，姓名，班号，班级，课程号，教师，成绩）</p>
+<p>学号 →班号   班号 →班级 （班号不属于学号，班号不决定学号）</p>
+<p>学号→班级</p>
+<p>所以班级传递依赖于学号</p>
+</blockquote>
+<blockquote>
+<p><strong>属性间联系决定函数依赖</strong></p>
+<p>① 1∶1联系：如果两属性集<em>X</em>、<em>Y</em>之间是1∶1联系，则存在函数依赖<em>X</em>  <em>Y</em>。</p>
+<p>② 1∶n联系：如果两属性集<em>X</em>、<em>Y</em>之间是<em>n</em>∶1联系，则存在函数依赖<em>X</em>→<em>Y</em>，即多方决定一方。</p>
+<p>③ m∶n联系：如果两属性集<em>X</em>、<em>Y</em>之间是<em>m</em>∶<em>n</em>联系，则不存在函数依赖。</p>
+</blockquote>
+<p><strong>定义4：候选码</strong></p>
+<blockquote>
+<p>在关系模式<em>R</em>(<em>U</em> )中，<em>X</em>是属性集U上的子集，如果<em>X</em>能够函数决定U中的每个属性*，*并且X的任何真子集都不能函数决定U中的每个属性，则称X为关系R上的一个候选码。</p>
+<p>在一个关系中可以有多个候选码，可能是某几个属性，也可能是某几个属性的组合。</p>
+</blockquote>
+<blockquote>
+<p>练习：指出学生关系S的候选码</p>
+<p>S（学号，姓名，班号，班级，课程号，教师，成绩）</p>
+<p>学号 →姓名，学号 →班号，班号→班级</p>
+<p>（学号，课程号）→成绩</p>
+<p>所以学生关系S的候选码是（学号，课程号）</p>
+</blockquote>
+<p><strong>定义5：主码/主键 主属性</strong></p>
+<blockquote>
+<p>一个关系包含多个候选码，可选取一个作为主码/主键。</p>
+</blockquote>
+<p><strong>定义6：主属性</strong></p>
+<blockquote>
+<p>主属性：包含在任一候选码中的属性称为主属性，其他为非主属性。</p>
+</blockquote>
+<h5 id="关系数据库范式理论"><a href="#关系数据库范式理论" class="headerlink" title="关系数据库范式理论"></a>关系数据库范式理论</h5>
+<blockquote>
+<p>（1）第一范式：若关系模式R(U)的 每个分量都是不可分割的数据项，则R(U)∈1NF</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207205230772.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207205230772.png" alt="第一范式"></p>
+<blockquote>
+<p>（2）第二范式：若R(U)∈1NF，且R(U)中的每一个非主属性都完全函数依赖于R(U)的任一候选码，则R(U)∈2NF</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>学号</strong></th>
+<th><strong>姓名</strong></th>
+<th><strong>班号</strong></th>
+<th><strong>地址</strong></th>
+<th><strong>课程号</strong></th>
+<th><strong>课程名</strong></th>
+<th><strong>教师</strong></th>
+<th><strong>成绩</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01001</td>
+<td>王丽</td>
+<td>01</td>
+<td>河北省石家庄市裕华路</td>
+<td>C001</td>
+<td>C语言</td>
+<td>刘峰</td>
+<td>80</td>
+</tr>
+<tr>
+<td>01002</td>
+<td>张勇</td>
+<td>01</td>
+<td>河北省保定市裕华路</td>
+<td>C001</td>
+<td>C语言</td>
+<td>刘峰</td>
+<td>75</td>
+</tr>
+<tr>
+<td>01003</td>
+<td>李江</td>
+<td>01</td>
+<td>河北省邢台市新华路</td>
+<td>C001</td>
+<td>C语言</td>
+<td>刘峰</td>
+<td>86</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>候选码：学号，课程号</p>
+<p>非主属性：姓名，班号，地址，课程名，教师，成绩</p>
+<p>函数依赖（学号，课程号）→姓名 是部分函数依赖</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>学号</strong></th>
+<th><strong>姓名</strong></th>
+<th><strong>班号</strong></th>
+<th><strong>地址</strong></th>
+<th><strong>教师</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01001</td>
+<td>王丽</td>
+<td>01</td>
+<td>河北省石家庄市裕华路</td>
+<td>刘峰</td>
+</tr>
+<tr>
+<td>01002</td>
+<td>张勇</td>
+<td>01</td>
+<td>河北省保定市裕华路</td>
+<td>刘峰</td>
+</tr>
+<tr>
+<td>01003</td>
+<td>李江</td>
+<td>01</td>
+<td>河北省邢台市新华路</td>
+<td>刘峰</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>第二范式还是存在数据冗余，操作异常情况</p>
+</blockquote>
+<blockquote>
+<p>（3）第三范式：如果关系R(U)中的每一个非主属性都不传递函数依赖于R(U)的任一候选码，则R(U)∈3NF</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>学号</strong></th>
+<th><strong>姓名</strong></th>
+<th><strong>班号</strong></th>
+<th><strong>班级</strong></th>
+<th><strong>教师</strong></th>
+<th><strong>成绩</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01001</td>
+<td>王丽</td>
+<td>01</td>
+<td>21级计算机网络技术</td>
+<td>刘峰</td>
+<td>80</td>
+</tr>
+<tr>
+<td>01002</td>
+<td>张勇</td>
+<td>01</td>
+<td>21级计算机网络技术</td>
+<td>刘峰</td>
+<td>75</td>
+</tr>
+<tr>
+<td>01003</td>
+<td>李江</td>
+<td>01</td>
+<td>21级计算机网络技术</td>
+<td>刘峰</td>
+<td>86</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>候选码：学号</p>
+<p>非主属性：姓名，班号，班号，教师，成绩</p>
+<p>学号→班号，班号→班级 所以 学号→班级 是传递函数依赖</p>
+</blockquote>
+<h5 id="数据库规范化实例"><a href="#数据库规范化实例" class="headerlink" title="数据库规范化实例"></a>数据库规范化实例</h5>
+<blockquote>
+<p><strong>规范化理论</strong></p>
+<p>​	利用规范化力量来改造关系模式，通过<strong>分解关系模式</strong>来消除其中不合适的数据依赖，以解决插入异常、删除异常、更新异常和数据冗余问题。</p>
+</blockquote>
+<blockquote>
+<p><strong>解决之道：分解、分解、再分解！</strong></p>
+<p>让一个关系模式尽量只描述一个概念、一个实体或一种实体之间的联系，<strong>概念单一</strong>！</p>
+</blockquote>
+<p>例如：</p>
+<table>
+<thead>
+<tr>
+<th><strong>学号</strong></th>
+<th><strong>姓名</strong></th>
+<th><strong>性别</strong></th>
+<th><strong>年龄</strong></th>
+<th><strong>班级编号</strong></th>
+<th><strong>班级名称</strong></th>
+<th><strong>课程编号</strong></th>
+<th><strong>课程名</strong></th>
+<th><strong>成绩</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00101</td>
+<td>王丽</td>
+<td>女</td>
+<td>20</td>
+<td>001</td>
+<td>22级计算机班</td>
+<td>C001</td>
+<td>C语言</td>
+<td>80</td>
+</tr>
+<tr>
+<td>00201</td>
+<td>张勇</td>
+<td>男</td>
+<td>18</td>
+<td>002</td>
+<td>22级会计班</td>
+<td>C010</td>
+<td>经济法</td>
+<td>75</td>
+</tr>
+<tr>
+<td>00102</td>
+<td>李江</td>
+<td>男</td>
+<td>19</td>
+<td>001</td>
+<td>22级计算机班</td>
+<td>C002</td>
+<td>数据结构</td>
+<td>86</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>候选码：（学号，课程编号）</p>
+<p>（学号，课程号）→姓名 是部分函数依赖</p>
+<p>学号→班级编号 班级编号→班级名称是传递函数依赖</p>
+</blockquote>
+<h5 id="数据库规范化实例——关系分解"><a href="#数据库规范化实例——关系分解" class="headerlink" title="数据库规范化实例——关系分解"></a>数据库规范化实例——关系分解</h5>
+<p><strong>1NF→2NF：去掉部分依赖分解过程</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>学号</strong></th>
+<th><strong>姓名</strong></th>
+<th><strong>性别</strong></th>
+<th><strong>年龄</strong></th>
+<th><strong>班级编号</strong></th>
+<th><strong>班级名称</strong></th>
+<th><strong>课程编号</strong></th>
+<th><strong>课程名</strong></th>
+<th><strong>成绩</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00101</td>
+<td>王丽</td>
+<td>女</td>
+<td>20</td>
+<td>001</td>
+<td>22级计算机班</td>
+<td>C001</td>
+<td>C语言</td>
+<td>80</td>
+</tr>
+<tr>
+<td>00201</td>
+<td>张勇</td>
+<td>男</td>
+<td>18</td>
+<td>002</td>
+<td>22级会计班</td>
+<td>C010</td>
+<td>经济法</td>
+<td>75</td>
+</tr>
+<tr>
+<td>00102</td>
+<td>李江</td>
+<td>男</td>
+<td>19</td>
+<td>001</td>
+<td>22级计算机班</td>
+<td>C002</td>
+<td>数据结构</td>
+<td>86</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>分解方法：候选码属性集合的每个子集，用它作为主键，将依赖于此主键的属性放置到此关系模式中，构成一个新关系模式</p>
+</blockquote>
+<blockquote>
+<p><strong>候选码</strong>：（<strong>学号，课程编号</strong>）</p>
+<p><strong>子集：学号，课程编号，（学号，课程编号）</strong></p>
+<p><strong>学生</strong>（<strong>学号</strong>，姓名，性别，年龄，班级编号，班级名称）</p>
+<p><strong>课程</strong>（<strong>课程编号</strong>，课程名称）</p>
+<p><strong>选课</strong>（<strong>学号，课程编号</strong>，成绩）</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207210227046.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207210227046.png" alt="1NF➡️2NF"></p>
+<blockquote>
+<p>学生（学号，姓名，性别，年龄，班级编号，班级名称）</p>
+<p>候选码：学号</p>
+<p>学号→班级编号 班级编号→班级名称是传递函数依赖</p>
+</blockquote>
+<blockquote>
+<p>分解方法：对于不是候选码的每个决定因子（班级编号），新建一个关系模式，将决定因子作为新关系模式的主键，在新关系模式中包含在原关系模式中所有依赖于该决定因子的属性（班级名称），从原关系模式中删去依赖于它的所有属性（班级名称）。</p>
+</blockquote>
+<blockquote>
+<p><strong>学号→班级编号 班级编号→班级名称</strong>是<strong>传递函数依赖</strong></p>
+</blockquote>
+<blockquote>
+<p>学生（<strong>学号</strong>，姓名，性别，年龄，班级编号，班级名称）</p>
+<p>学生（<strong>学号</strong>，姓名，性别，年龄）</p>
+<p>班级（<strong>班级编号</strong>，班级名称）</p>
+</blockquote>
+<p><strong>2NF→3NF：去掉传递依赖分解过程</strong></p>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207210523416.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207210523416.png" alt="2NF→3NF"></p>
+<blockquote>
+<p>学生（<strong>学号</strong>，姓名，性别，年龄）</p>
+<p>班级（<strong>班级编号</strong>，班级名称）</p>
+<p>课程（<strong>课程编号</strong>，课程名称）</p>
+<p>选课（<strong>学号，课程编号</strong>，成绩）</p>
+</blockquote>
+<h5 id="规范化和性能的关系"><a href="#规范化和性能的关系" class="headerlink" title="规范化和性能的关系"></a>规范化和性能的关系</h5>
+<blockquote>
+<p>为满足某种商业目标，数据库性能比规范化数据库更重要</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>通过在给定的表中添加额外的字段，以大量减少需要从中搜索信息所需的时间</li>
+<li>通过在给定的表中插入计算列（如成绩总分），以方便查询</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>进行规范化的同时，还需要综合考虑数据库的性能。</p>
+</blockquote>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
+<blockquote>
+<p>在需求分析阶段，设计数据库的一般步骤为：</p>
+<p>​	收集信息</p>
+<p>​	标识对象</p>
+<p>​	标识每个对象的属性</p>
+<p>​	标识对象之间的关系</p>
+<p>在概要设计阶段和详细设计阶段，设计数据库的步骤为：</p>
+<p>​	绘制E-R图</p>
+<p>​	将E-R图转换为表格</p>
+<p>​	应用三大范式规范化表格</p>
+<p>为了设计结构良好的数据库，需要遵守一些专门的规则，称为数据库的设计范式。</p>
+<p>​	第一范式（1NF）的目标：确保每列的原子性。</p>
+<p>​	第二范式（2NF）的目标：确保表中的每列，都和主键相关 。</p>
+<p>​	第三范式（3NF）的目标：确保每列都和主键列直接相关，而不是间接相关 。</p>
+</blockquote>
+<h2 id="数据定义语言—DDL"><a href="#数据定义语言—DDL" class="headerlink" title="数据定义语言—DDL"></a>数据定义语言—DDL</h2>
+<h3 id="MySQL数据库文件介绍"><a href="#MySQL数据库文件介绍" class="headerlink" title="MySQL数据库文件介绍"></a>MySQL数据库文件介绍</h3>
+<blockquote>
+<p>数据库管理的核心任务包括创建、操作和支持数据库。在MySQL中，每个数据库都对应存放在一个与数据库同名的文件夹中。</p>
+<p>MySQL数据库文件有“.frm”、“.MYD”和“.MYI”3种文件，其中“.frm”是描述表结构的文件，“.MYD”是表的数据文件，“.MYI”是表数据文件中的索引文件。它们都存放在与数据库同名的文件夹中。</p>
+</blockquote>
+<h3 id="MySQL数据库模型"><a href="#MySQL数据库模型" class="headerlink" title="MySQL数据库模型"></a>MySQL数据库模型</h3>
+<blockquote>
+<ul>
+<li>在数据库服务器中可以存储多个数据库文件，所以建立数据库时要设定数据库的文件名，每个数据库有惟一的数据库文件名作为与其它数据库区别的标识。</li>
+<li>数据库文件： 数据库是由相关数据表组成，一个数据库包括多个数据表。数据库文件用于记录数据库中数据表构成的信息。</li>
+<li>数据库只能由得到授权的用户访问，这样保证了数据库的安全。</li>
+</ul>
+</blockquote class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207211337754.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207211337754.png" alt="MySQL数据库模型" style="zoom: 50%;">
+<h3 id="数据库和表"><a href="#数据库和表" class="headerlink" title="数据库和表"></a>数据库和表</h3>
+<blockquote>
+<p>数据库可以看成是一个存储数据对象的容器，这些数据对象包括表、视图、触发器、存储过程等，其中，表是最基本的数据对象，用以存放数据库的数据。</p>
+</blockquote>
+<blockquote>
+<p>必须首先创建数据库，然后才能创建数据库的数据对象。</p>
+<p>MySQL可以采用两种方式：</p>
+<p>创建、操作数据库和数据对象</p>
+<p>（1）命令行方式</p>
+<p>（2）图形界面工具方式</p>
+</blockquote class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207211551496.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241207211551496.png" alt="数据库" style="zoom:50%;">
+<blockquote>
+<p><strong>MySQL自动建立的数据库介绍</strong></p>
+<p>​     MySQL安装完成之后，将会在其data目录下自动创建information_schema、mysql、performance_schema、sys四个系统数据库。</p>
+<p>​     可以使用<code>SHOW DATABASES</code>命令来查看当前所有存在的数据库。</p>
+</blockquote>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3>
+<blockquote>
+<p>MySQL安装后，系统自动地创建information_scema和MySQL数据库，MySQL把有关数据库的信息存储在这两个数据库中。如果删除了这些数据库，MySQL就不能正常工作。</p>
+<p>对于用户的数据，需要创建新的数据库来存放。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式：</span></span><br><span class="line"><span class="keyword">CREATE</span> &#123;DATABASE <span class="operator">|</span> SCHEMA&#125; [IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] 数据库名</span><br><span class="line">        [ [<span class="keyword">DEFAULT</span>] <span class="type">CHARACTER</span> <span class="keyword">SET</span> 字符集名 <span class="operator">|</span> [<span class="keyword">DEFAULT</span>] <span class="keyword">COLLATE</span> 校对规则名]</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 说明：语句中“[ ]”内为可选项。</span></span><br><span class="line"><span class="comment">-- &#123;  |  &#125;表示二选一。</span></span><br><span class="line"><span class="comment">-- 例如：</span></span><br><span class="line"><span class="keyword">Create</span> database bookstore;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在SQL语言创建数据库命令<code>create database</code>中，如果省略语句中“[ ]”中的所有可选项，其结构形式如下：</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE 数据库名;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>MySQL数据库命名规则：</strong></p>
+<ul>
+<li>不能与其他数据库重名</li>
+<li>名称可以由任意阿拉伯数字、字母、下划线和“$”组成，可以使用以上任意字符头，但不能使用单独的数字，否则会与其他数字混淆</li>
+<li>名称最长64个字符</li>
+<li>不能使用MySQL关键字</li>
+<li>默认情况下，Windows对数据库大小写不敏感，而在Linux下对大小写是敏感的，为了数据库在不同平台下移植，建议使用小写数据库名。</li>
+</ul>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 【例3.1】 创建一个名为Bookstore的数据库。</span></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE Bookstore; </span><br></pre></td></tr></table></figure>
+<h3 id="显示数据库命令"><a href="#显示数据库命令" class="headerlink" title="显示数据库命令"></a>显示数据库命令</h3>
+<blockquote>
+<p>显示服务器中已建立的数据库，使用<code>SHOW DATABASES;</code>命令。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式：</span></span><br><span class="line"><span class="keyword">SHOW</span> DATABASES;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此命令没有用户变量，执行“<code>SHOW DATABASES;</code>” 。</p>
+<p><strong>注意：在MySQL中，每一条SQL语句都以“;”作为结束标志。</strong></p>
+</blockquote>
+<h3 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h3>
+<blockquote>
+<p>因为MySQL服务器中有多个数据库，可以使用USE命令可指定当前数据库。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式：</span></span><br><span class="line">USE 数据库名;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：这个语句也可以用来从一个数据库“跳转”到另一个数据库，在用<code>CREATE DATABASE</code>语句创建了数据库之后，该数据库不会自动成为当前数据库，需要用这条USE语句来指定。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 【例】将数据库test1设置为当前数据库。</span></span><br><span class="line">Use test1;</span><br></pre></td></tr></table></figure>
+<h3 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h3>
+<blockquote>
+<p>数据库创建后，如果需要修改数据库的参数，可以使用<code>ALTER DATABASE;</code>命令。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式：</span></span><br><span class="line"><span class="keyword">ALTER</span> &#123;DATABASE <span class="operator">|</span> SCHEMA&#125; [数据库名]</span><br><span class="line">               [[<span class="keyword">DEFAULT</span>] <span class="type">CHARACTER</span> <span class="keyword">SET</span> 字符集名 <span class="operator">|</span> [<span class="keyword">DEFAULT</span>] <span class="keyword">COLLATE</span> 校对规则名]</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 【例3.3】 修改数据库Pet的默认字符集为latin1，校对规则为latin1_swedish_ci。</span></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE Pet</span><br><span class="line"><span class="keyword">DEFAULT</span> <span class="type">CHARACTER</span> <span class="keyword">SET</span> latin1</span><br><span class="line"><span class="keyword">DEFAULT</span> <span class="keyword">COLLATE</span>  latin1_swedish_ci; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3>
+<blockquote>
+<p>已经创建的数据库需要删除，使用<code>DROP DATABASE</code>命令。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式：</span></span><br><span class="line"><span class="keyword">DROP</span> DATABASE  [IF <span class="keyword">EXISTS</span>] 数据库名;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 例如，数据库test2命令如下：</span></span><br><span class="line"><span class="keyword">DROP</span> DATABASE  test2;</span><br></pre></td></tr></table></figure>
+<h3 id="MySQL数据类型"><a href="#MySQL数据类型" class="headerlink" title="MySQL数据类型"></a>MySQL数据类型</h3>
+<blockquote>
+<ul>
+<li>确定表中每列的数据类型是设计表的重要步骤。</li>
+<li>列的数据类型就是定义该列所能存放的数据的值的类型。</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>字符串类型</strong></th>
+<th><strong>数值类型</strong></th>
+<th><strong>时间类型</strong></th>
+<th><strong>大数据类型</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Char(n)</td>
+<td>int</td>
+<td>date</td>
+<td>blob</td>
+</tr>
+<tr>
+<td>Varchar(n)</td>
+<td>Float(M,D)</td>
+<td>time</td>
+<td>text</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>datetime</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>MySQL常用数据类型：</strong></p>
+<ul>
+<li>整数类型</li>
+<li>浮点数类型和定点数类型</li>
+<li>字符串类型</li>
+<li>日期时间类型</li>
+<li>复合类型</li>
+</ul>
+</blockquote>
+<h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4>
+<blockquote>
+<p>在int类型里，MySQL支持tinyint、smallint、mediumint、int、bigint 5种类型，这些类型都是用来存放整形数据的，只不过存储的值的大小范围不一样。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241208114347133.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241208114347133.png" alt="整数类型"></p>
+<h4 id="浮点数类型和定点数类型"><a href="#浮点数类型和定点数类型" class="headerlink" title="浮点数类型和定点数类型"></a>浮点数类型和定点数类型</h4>
+<blockquote>
+<p>MySQL支持float、double、decimal 3种类型，float是单精度浮点数值、double是双精度浮点数值、decimal是定点数值，如果确定数值总长度以及小数点位数，就可以用decimal定点数值来表示。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241208114456261.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241208114456261.png" alt="浮点数类型和定点数类型"></p>
+<blockquote>
+<p>**提示：**存储数值范围越小，精度越高；存储数值范围越大，精度就越不准确。对于既要求精度又固定小数点位数的数值存储，采用decimal（numeric），其优点在于可以自定义小数点位数，精度高。某些特殊情况，如数值范围巨大则只能用float（real）类型了，此类型一般不提倡使用。</p>
+</blockquote>
+<h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4>
+<blockquote>
+<p>MySQL数据库提供了几种基本字符串类型，它们用来存放一个字符、一个字符串、巨大的文本或者二进制字符串数据。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241208114702446.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241208114702446.png" alt="字符串类型"></p>
+<h4 id="日期时间类型"><a href="#日期时间类型" class="headerlink" title="日期时间类型"></a>日期时间类型</h4>
+<blockquote>
+<p>MySQL数据库提供了5种不同的日期时间类型，用来存储和日期时间相关的数据，每个时间类型有一个有效值范围和一个“零”值，当指定不合法的MySQL不能表示的值时使用“零”值。</p>
+</blockquote>
+<p class='item-img' data-src='/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241208114804811.png'><img src="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20241208114804811.png" alt="日期时间类型"></p>
+<blockquote>
+<p>**提示：**MySQL数据库用date日期类型和datetime日期时间类型来存储日期值，使用time时间类型来存储时间值，使用year来存放年份值，date 类型的值应该用连字号“-”分隔开，而 time 类型的值应该用冒号“:”分隔开。</p>
+</blockquote>
+<h4 id="如何选取数据类型"><a href="#如何选取数据类型" class="headerlink" title="如何选取数据类型"></a>如何选取数据类型</h4>
+<blockquote>
+<p>数据类型的选择会影响存储空间的开销和数据查询性能，所以在设计数据库的时候，应该为存储的数据选择正确的存储数据类型。</p>
+</blockquote>
+<blockquote>
+<p><strong>可以遵循以下原则来选取数据类型：</strong></p>
+<p>（1）大小合适就是最好的，如存放姓名的字段类型，设置合适长度的字符串就可以，而不应该设置得非常大（65 535），因为这样可以用更少的磁盘容量、CPU缓存，大大减少了I/O开销。</p>
+<p>（2）简单存放就好，如存放一个简单而又短小的字符串，可以选取varchar类型，而不应该选取text或者blob类型，简单的数据类型操作通常需要更少的CPU周期。</p>
+<p>（3）尽量避免使用NULL，NULL是列默认的属性，通常我们要指定为NOT NULL。有NULL的列值会使得索引、索引统计和值比较更加复杂。</p>
+<p>（4）数据类型的选择还应该考虑数据操作和应用处理的要求，如某些类型更适合于加快数据操作而不是其他方面。</p>
+<p>（5）如果想用不同的标准对一列中所有的值进行排序，那么我们需要选择一种能够有效执行这些功能并且带有最大限度灵活性的类型。对相应字段添加索引，能够加快检索速度。需要保证使用的数据类型支持比较运算，并且相互兼容。</p>
+</blockquote>
+<h5 id="char和varchar"><a href="#char和varchar" class="headerlink" title="char和varchar"></a>char和varchar</h5>
+<blockquote>
+<p>​	char是固定长度的，查询速度比varchar快得多。char的缺点是浪费存储空间。检索char列时，返回的结果会删除尾部空格，所以程序需要对空格进行处理。</p>
+<p>​	如果列中要存储的数据的长度差不多是一致的，则应该考虑使用char，否则应该考虑使用varchar；如果列中最大数据的长度小于50Byte，则一般也考虑使用char(当然，如果这个列很少用，则基于节省空间和减少I/O的考虑，还是可以使用varchar)；一般不宜定义大于50Byte的char类型列。</p>
+</blockquote>
+<h5 id="text和blob"><a href="#text和blob" class="headerlink" title="text和blob"></a>text和blob</h5>
+<blockquote>
+<p>​	在保存大文本时，通常选择text或者blob。二者的差别是blob可以保存二进制数据，如照片。text和blob又包括text、mediumtext、longtext和blob、mediumblob、longblob，它们之间的区别是存储文本长度不同和存储字节不同。在不必要的时候避免检索大型的blob或text值。把blob或text列分离到单独的表中。</p>
+</blockquote>
+<h5 id="浮点数和定点数"><a href="#浮点数和定点数" class="headerlink" title="浮点数和定点数"></a>浮点数和定点数</h5>
+<blockquote>
+<p>​	浮点数存在误差问题，因此对于货币等对精度敏感的数据，应该用定点数表示或存储。在编程中，如果用到浮点数，要特别注意误差问题，并尽量避免做浮点数比较；要注意一些特殊值的处理。</p>
+<p>​	decimal用于存储精确数据，而float只能用于存储非精确的数据，故精确数据最好使用decimal类型；由于float的存储空间的开销一般比decimal小（精确到7位小数只需要4个字节，而精确到15位小数只需要8个字节），故非精确数据类型建议使用float。</p>
+</blockquote>
+<h5 id="日期类型的选择"><a href="#日期类型的选择" class="headerlink" title="日期类型的选择"></a>日期类型的选择</h5>
+<blockquote>
+<p>​	根据实际需要选择能够满足应用的最小存储日期类型。如果记录年、月、日、时、分、秒，并且记录年份比较久远，则最好使用datetime，不要使用timestamp；如果记录的日期需要让不同时区的用户使用，则最好使用timestamp，因为日期类型中只有它能够和实际时区相对应。</p>
+</blockquote>
+<h3 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h3>
+<blockquote>
+<p>为数据库<strong>创建数据表</strong>，可以使用SQL命令<code>CREATE TABLE</code>来完成</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式：</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] tbl_name</span><br><span class="line">      （列名<span class="number">1</span>  数据类型<span class="number">1</span>  [<span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="operator">|</span> <span class="keyword">NULL</span>] [<span class="keyword">DEFAULT</span> 列默认值]…，</span><br><span class="line">         列名<span class="number">2</span>  数据类型 <span class="number">2</span> [<span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="operator">|</span> <span class="keyword">NULL</span>] [<span class="keyword">DEFAULT</span> 列默认值]…</span><br><span class="line">       ）</span><br><span class="line">       ENGINE <span class="operator">=</span> 存储引擎；</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 【例】命令行SQL语句方式创建数据库表book</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th><strong>字段名</strong></th>
+<th><strong>字段类型</strong></th>
+<th><strong>宽度</strong></th>
+<th><strong>是否为空</strong></th>
+<th><strong>默认值</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>图书编号</strong></td>
+<td><strong>char</strong></td>
+<td><strong>10</strong></td>
+<td>x</td>
+<td></td>
+<td><strong>主键，采用10位字符编号</strong></td>
+</tr>
+<tr>
+<td><strong>类别</strong></td>
+<td><strong>char</strong></td>
+<td><strong>8</strong></td>
+<td>x</td>
+<td><strong>计算机</strong></td>
+<td><strong>2-4个汉字</strong></td>
+</tr>
+<tr>
+<td><strong>书名</strong></td>
+<td><strong>varchar</strong></td>
+<td><strong>40</strong></td>
+<td>x</td>
+<td></td>
+<td><strong>不超过40个字符</strong></td>
+</tr>
+<tr>
+<td><strong>出版时间</strong></td>
+<td><strong>date</strong></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>单价</strong></td>
+<td><strong>Float</strong></td>
+<td><strong>5,2</strong></td>
+<td><strong>√</strong></td>
+<td></td>
+<td><strong>元为单位，精确到分</strong></td>
+</tr>
+<tr>
+<td><strong>数量</strong></td>
+<td><strong>int</strong></td>
+<td></td>
+<td><strong>√</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 命令如下：</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span>  book</span><br><span class="line"> (</span><br><span class="line">       图书编号  <span class="type">char</span>(<span class="number">10</span>)   <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">       类别  <span class="type">varchar</span>(<span class="number">8</span>)  <span class="keyword">NOT</span> <span class="keyword">NULL</span>  <span class="keyword">DEFAULT</span>  <span class="string">&#x27;计算机&#x27;</span>,</span><br><span class="line">       书名       <span class="type">varchar</span>(<span class="number">40</span>)  <span class="keyword">NOT</span>  <span class="keyword">NULL</span> ,</span><br><span class="line">       出版时间   <span class="type">date</span>        <span class="keyword">NOT</span>  <span class="keyword">NULL</span> ,</span><br><span class="line">       单价      <span class="type">float</span>(<span class="number">5</span>,<span class="number">2</span>)    <span class="keyword">NULL</span> ,</span><br><span class="line">       数量      <span class="type">int</span>   </span><br><span class="line">); </span><br></pre></td></tr></table></figure>
+<h3 id="显示数据表文件名"><a href="#显示数据表文件名" class="headerlink" title="显示数据表文件名"></a>显示数据表文件名</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式： </span></span><br><span class="line"><span class="keyword">SHOW</span> TABLES;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 【例】显示Bookstore 数据库建立的数据表文件:</span></span><br><span class="line">USE Bookstore;  </span><br><span class="line"><span class="keyword">SHOW</span> TABLES;</span><br></pre></td></tr></table></figure>
+<h3 id="显示数据表结构"><a href="#显示数据表结构" class="headerlink" title="显示数据表结构"></a>显示数据表结构</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式(DESC是DESCRIBE的简写，二者用法相同。)：</span></span><br><span class="line">&#123;<span class="keyword">DESCRIBE</span> <span class="operator">|</span> <span class="keyword">DESC</span>&#125; 表名 [列名 <span class="operator">|</span> 通配符 ]</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 【例】 用DESCRIBE语句查看 Book 表的列的信息。</span></span><br><span class="line">USE Bookstore;</span><br><span class="line"><span class="keyword">DESCRIBE</span> Book;</span><br><span class="line"><span class="comment">-- 【例】 查看 Book 表图书编号列的信息。</span></span><br><span class="line">USE Bookstore;</span><br><span class="line"><span class="keyword">DESC</span> Book 图书编号;</span><br></pre></td></tr></table></figure>
+<h3 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h3>
+<blockquote>
+<p>**<code>ALTER TABLE</code>**用于更改原有表的结构。例如，可以增加或删减列，创建或取消索引，更改原有列的类型，重新命名列或表，还可以更改表的评注和表的类型。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式：</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line">  <span class="keyword">ADD</span> [<span class="keyword">COLUMN</span>] 列定义  [<span class="keyword">FIRST</span> <span class="operator">|</span> AFTER列名]                	 <span class="comment">/*添加列*/</span>	</span><br><span class="line">  <span class="operator">|</span> <span class="keyword">ALTER</span> [<span class="keyword">COLUMN</span>] 列名 &#123;<span class="keyword">SET</span> <span class="keyword">DEFAULT</span> 默认值<span class="operator">|</span> <span class="keyword">DROP</span> <span class="keyword">DEFAULT</span>&#125; 	 <span class="comment">/*修改默认值*/</span></span><br><span class="line">  <span class="operator">|</span> CHANGE [<span class="keyword">COLUMN</span>] 旧列名 列定义    [<span class="keyword">FIRST</span><span class="operator">|</span>AFTER列名]		  <span class="comment">/*对列重命名*/</span>             </span><br><span class="line">  <span class="operator">|</span> MODIFY [<span class="keyword">COLUMN</span>] 列定义 [<span class="keyword">FIRST</span> <span class="operator">|</span> AFTER 列名]		 	    <span class="comment">/*修改列类型*/</span></span><br><span class="line">  <span class="operator">|</span> <span class="keyword">DROP</span> [<span class="keyword">COLUMN</span>] 列名									<span class="comment">/*删除列*/</span></span><br><span class="line">  <span class="operator">|</span> RENAME [<span class="keyword">TO</span>] 新表名	     							    <span class="comment">/*重命名该表*/</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="增加列"><a href="#增加列" class="headerlink" title="增加列"></a>增加列</h4>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span>  表名   <span class="keyword">ADD</span>  列定义  [<span class="keyword">FIRST</span> <span class="operator">|</span> AFTER  列名];</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 【例】在表book中增加一列“浏览次数”。</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> book  <span class="keyword">ADD</span> 浏览次数 <span class="type">int</span> <span class="keyword">NULL</span>;</span><br><span class="line"><span class="comment">-- 【扩展】在表book中增加一列“浏览次数”，位置在单价列的后面。</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> book  <span class="keyword">ADD</span> 浏览次数 <span class="type">int</span> <span class="keyword">NULL</span> after 单价;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="删除列"><a href="#删除列" class="headerlink" title="删除列"></a>删除列</h4>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span>  表名  <span class="keyword">DROP</span> 列名</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 【例】删除book表中“浏览次数”列。</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> book <span class="keyword">DROP</span> 浏览次数;</span><br><span class="line"><span class="comment">-- 【扩展】在表book中增加“浏览次数”列，删除“封面图片”列。</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> book  <span class="keyword">ADD</span> 浏览次数 <span class="type">int</span> <span class="keyword">NULL</span>, <span class="keyword">DROP</span> 封面图片;</span><br></pre></td></tr></table></figure>
+<h4 id="更改列名"><a href="#更改列名" class="headerlink" title="更改列名"></a>更改列名</h4>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span>  表名  CHANGE  旧列名  列定义 </span><br><span class="line"></span><br><span class="line"><span class="comment">-- 【例】将book表中“出版时间”列改为“出版日期”列。</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> book  CHANGE 出版时间 出版日期 <span class="type">date</span> <span class="keyword">not</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="更改列类型"><a href="#更改列类型" class="headerlink" title="更改列类型"></a>更改列类型</h4>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法格式</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span>  表名  MODIFY 列定义</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 【例】将book表中“出版日期”列类型改为日期时间类型。</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> book MODIFY 出版日期 datetime <span class="keyword">not</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">MySQL的安装和使用 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Blue Eagle</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">MySQL课程笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">数据库基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80SQL"><span class="toc-number">1.1.2.</span> <span class="toc-text">结构化查询语言SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">SQL概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">SQL分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E9%80%9A%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">SQL通用语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%8C%96%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.1.3.</span> <span class="toc-text">图形化软件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Navicat-%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">Navicat 下载</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.2.</span> <span class="toc-text">数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">关系数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8A%A0%E5%B7%A5"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">数据的加工</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E5%8C%96%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">规范化设计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.2.</span> <span class="toc-text">数据库设计步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E9%98%B6%E6%AE%B5"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">需求分析阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E8%AE%BE%E8%AE%A1%E9%98%B6%E6%AE%B5"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">概念设计阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E9%98%B6%E6%AE%B5"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">逻辑设计阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.2.3.1.</span> <span class="toc-text">数据模型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%8C%96"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">数据库设计规范化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">1.2.2.4.1.</span> <span class="toc-text">函数依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%8C%83%E5%BC%8F%E7%90%86%E8%AE%BA"><span class="toc-number">1.2.2.4.2.</span> <span class="toc-text">关系数据库范式理论</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%84%E8%8C%83%E5%8C%96%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.2.2.4.3.</span> <span class="toc-text">数据库规范化实例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%84%E8%8C%83%E5%8C%96%E5%AE%9E%E4%BE%8B%E2%80%94%E2%80%94%E5%85%B3%E7%B3%BB%E5%88%86%E8%A7%A3"><span class="toc-number">1.2.2.4.4.</span> <span class="toc-text">数据库规范化实例——关系分解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E5%8C%96%E5%92%8C%E6%80%A7%E8%83%BD%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.2.4.5.</span> <span class="toc-text">规范化和性能的关系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80%E2%80%94DDL"><span class="toc-number">1.3.</span> <span class="toc-text">数据定义语言—DDL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.3.1.</span> <span class="toc-text">MySQL数据库文件介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">MySQL数据库模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E8%A1%A8"><span class="toc-number">1.3.3.</span> <span class="toc-text">数据库和表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.4.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.5.</span> <span class="toc-text">显示数据库命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.6.</span> <span class="toc-text">打开数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.7.</span> <span class="toc-text">修改数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.8.</span> <span class="toc-text">删除数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.9.</span> <span class="toc-text">MySQL数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.9.1.</span> <span class="toc-text">整数类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AE%9A%E7%82%B9%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.9.2.</span> <span class="toc-text">浮点数类型和定点数类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.9.3.</span> <span class="toc-text">字符串类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.9.4.</span> <span class="toc-text">日期时间类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E5%8F%96%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.9.5.</span> <span class="toc-text">如何选取数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#char%E5%92%8Cvarchar"><span class="toc-number">1.3.9.5.1.</span> <span class="toc-text">char和varchar</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#text%E5%92%8Cblob"><span class="toc-number">1.3.9.5.2.</span> <span class="toc-text">text和blob</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E5%92%8C%E5%AE%9A%E7%82%B9%E6%95%B0"><span class="toc-number">1.3.9.5.3.</span> <span class="toc-text">浮点数和定点数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-number">1.3.9.5.4.</span> <span class="toc-text">日期类型的选择</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-number">1.3.10.</span> <span class="toc-text">创建数据表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%95%B0%E6%8D%AE%E8%A1%A8%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.3.11.</span> <span class="toc-text">显示数据表文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.12.</span> <span class="toc-text">显示数据表结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="toc-number">1.3.13.</span> <span class="toc-text">修改表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><span class="toc-number">1.3.13.1.</span> <span class="toc-text">增加列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%97"><span class="toc-number">1.3.13.2.</span> <span class="toc-text">删除列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E5%88%97%E5%90%8D"><span class="toc-number">1.3.13.3.</span> <span class="toc-text">更改列名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E5%88%97%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.13.4.</span> <span class="toc-text">更改列类型</span></a></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">©</span><span class="icp-content">2024 Blue Eagle All rights reserved.</span></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
