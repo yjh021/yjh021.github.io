@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GitHub使用教程 | Blue Eagle's Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Blue Eagle's Blog" type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>GitHub使用教程</h1></div><hr><div id="post-content"><h1>GitHub 简介与完整使用指南</h1>
+<h2 id="什么是-GitHub？"><a href="#什么是-GitHub？" class="headerlink" title="什么是-GitHub？"></a>什么是 GitHub？</h2>
+<p>GitHub 是一个基于云的软件源代码托管服务平台，主要用于版本控制和协作开发。它允许开发者在任何地方协同工作，构建比单独工作更强大的软件。</p>
+<p><strong>核心特性</strong>：</p>
+<ul>
+<li><strong>版本控制</strong>：使用 Git 系统跟踪代码更改历史</li>
+<li><strong>协作功能</strong>：支持多人协同开发，包括分支、合并请求等功能</li>
+<li><strong>代码托管</strong>：提供安全的云端代码存储服务</li>
+<li><strong>项目管理</strong>：提供问题跟踪、Wiki 文档和项目管理工具</li>
+</ul>
+<p>GitHub 目前汇集了超过 <strong>5 千万开发者</strong>，是全球最大的开源社区和代码托管平台。</p>
+<h2 id="GitHub-核心功能详解"><a href="#GitHub-核心功能详解" class="headerlink" title="GitHub-核心功能详解"></a>GitHub 核心功能详解</h2>
+<h3 id="仓库（Repository）"><a href="#仓库（Repository）" class="headerlink" title="仓库（Repository）"></a>仓库（Repository）</h3>
+<p>仓库是 GitHub 的核心概念，用于存储项目的所有文件、文档和修订历史。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 创建新仓库的典型结构</span><br><span class="line">项目名称/</span><br><span class="line">├── README.md          # 项目说明文档</span><br><span class="line">├── .gitignore         # 指定Git忽略的文件</span><br><span class="line">├── src/               # 源代码目录</span><br><span class="line">├── docs/              # 项目文档</span><br><span class="line">└── LICENSE            # 开源许可证</span><br></pre></td></tr></table></figure>
+<h3 id="分支（Branching）与合并（Merging）"><a href="#分支（Branching）与合并（Merging）" class="headerlink" title="分支（Branching）与合并（Merging）"></a>分支（Branching）与合并（Merging）</h3>
+<p>GitHub 使用分支系统让开发者在不影响主代码的情况下进行修改。</p>
+<p><strong>工作流程</strong>：</p>
+<ol>
+<li>从主分支（main/master）创建新分支</li>
+<li>在新分支上进行功能开发或错误修复</li>
+<li>提交更改并推送到远程仓库</li>
+<li>创建拉取请求（Pull Request）申请合并到主分支</li>
+</ol>
+<h3 id="协作功能"><a href="#协作功能" class="headerlink" title="协作功能"></a>协作功能</h3>
+<ul>
+<li><strong>拉取请求</strong>：代码审查和讨论的机制</li>
+<li><strong>问题跟踪</strong>：Bug报告和功能请求管理系统</li>
+<li><strong>代码审查</strong>：团队成员对代码更改进行评论和建议</li>
+</ul>
+<h2 id="Markdown-在-GitHub-中的应用"><a href="#Markdown-在-GitHub-中的应用" class="headerlink" title="Markdown-在-GitHub-中的应用"></a>Markdown 在 GitHub 中的应用</h2>
+<p>Markdown 是一种轻量级标记语言，在 GitHub 中广泛用于文档编写。</p>
+<h3 id="基础格式化语法"><a href="#基础格式化语法" class="headerlink" title="基础格式化语法"></a>基础格式化语法</h3>
+<h4 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**粗体文本** 或 __粗体文本__</span><br><span class="line">*斜体文本* 或 _斜体文本_</span><br><span class="line">~~删除线文本~~</span><br><span class="line">`内联代码`</span><br></pre></td></tr></table></figure>
+<h4 id="标题层级"><a href="#标题层级" class="headerlink" title="标题层级"></a>标题层级</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<h4 id="列表格式"><a href="#列表格式" class="headerlink" title="列表格式"></a>列表格式</h4>
+<ul>
+<li><strong>无序列表</strong>：使用 <code>-</code>、<code>*</code>或 <code>+</code></li>
+<li><strong>有序列表</strong>：使用数字加句点</li>
+<li><strong>任务列表</strong>：使用 <code>- [ ]</code>和 <code>- [x]</code></li>
+</ul>
+<blockquote>
+<p>[!NOTE]</p>
+<p>在 GitHub 上写作时，你可以使用 Markdown 语法和 HTML 元素来扩展 Markdown 的功能。</p>
+</blockquote>
+<h3 id="高级功能示例"><a href="#高级功能示例" class="headerlink" title="高级功能示例"></a>高级功能示例</h3>
+<h4 id="表格创建"><a href="#表格创建" class="headerlink" title="表格创建"></a>表格创建</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 命令 | 描述 |</span><br><span class="line">|------|------|</span><br><span class="line">| `git status` | 列出所有*新文件或已修改*文件 |</span><br><span class="line">| `git diff` | 显示尚未暂存的文件差异 |</span><br></pre></td></tr></table></figure>
+<h4 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h4>
+<details>
+<summary>点击查看代码高亮示例</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 带有语法高亮的JavaScript代码</span><br><span class="line">function greet() &#123;</span><br><span class="line">  console.log(&quot;Hello, World!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+<h4 id="图表和图形"><a href="#图表和图形" class="headerlink" title="图表和图形"></a>图表和图形</h4>
+<p>GitHub 支持 Mermaid 语法创建流程图、序列图等。</p>
+<h2 id="中国大陆地区-GitHub-访问解决方案"><a href="#中国大陆地区-GitHub-访问解决方案" class="headerlink" title="中国大陆地区-GitHub-访问解决方案"></a>中国大陆地区 GitHub 访问解决方案</h2>
+<p>由于网络限制，国内用户访问 GitHub 可能遇到困难。以下是几种有效的解决方案。</p>
+<h3 id="修改-Hosts-文件（直接有效）"><a href="#修改-Hosts-文件（直接有效）" class="headerlink" title="修改-Hosts-文件（直接有效）"></a>修改 Hosts 文件（直接有效）</h3>
+<p><strong>操作步骤</strong>：</p>
+<ol>
+<li>获取最新的 GitHub 相关域名对应的 IP 地址</li>
+<li>以管理员权限编辑系统 hosts 文件 Windows 路径：<code>C:\Windows\System32\drivers\etc\hosts</code> Mac/Linux 路径：<code>/etc/hosts</code></li>
+<li>添加 IP 与域名的映射关系</li>
+<li>刷新 DNS 缓存使修改生效</li>
+</ol>
+<p><strong>示例 hosts 内容</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># GitHub 域名映射</span><br><span class="line">140.82.113.4 github.com</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">199.232.96.133 raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>[!CAUTION]</p>
+<p>GitHub 的 IP 地址可能随时变化，需要定期更新 hosts 文件。</p>
+</blockquote>
+<h3 id="使用镜像站点访问"><a href="#使用镜像站点访问" class="headerlink" title="使用镜像站点访问"></a>使用镜像站点访问</h3>
+<p>以下是一些稳定的 GitHub 镜像站点：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hub.fastgit.org/">https://hub.fastgit.org/</a></li>
+<li><a target="_blank" rel="noopener" href="https://gitclone.com/">https://gitclone.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.wuyanzheshui.workers.dev/">https://github.wuyanzheshui.workers.dev/</a></li>
+</ul>
+<p><strong>镜像站使用示例</strong>：</p>
+<p>将原始 GitHub URL：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/username/repository</span><br></pre></td></tr></table></figure>
+<p>替换为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://hub.fastgit.org/username/repository</span><br></pre></td></tr></table></figure>
+<h3 id="使用开发者工具和代理"><a href="#使用开发者工具和代理" class="headerlink" title="使用开发者工具和代理"></a>使用开发者工具和代理</h3>
+<ul>
+<li>
+<p><strong>GitHub 加速器</strong>：专门的加速工具</p>
+</li>
+<li>
+<p><strong>gh-proxy 中转服务</strong>：通过代理访问</p>
+</li>
+<li>
+<p><strong>云开发环境</strong>：直接使用在线的开发环境</p>
+<h4 id="steamcommunity-302"><a href="#steamcommunity-302" class="headerlink" title="steamcommunity-302"></a>steamcommunity 302</h4>
+<p>如果使用GitHub加速器可以选择steamcommunity 302，链接地址：<a target="_blank" rel="noopener" href="https://www.dogfight360.com/blog/18682/">Steamcommunity 302 Ver.13.0.07_fix – Dogfight360</a> ，下载后打开点击设置，设置代理功能，保存后启动服务。</p>
+<p class='item-img' data-src='/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216232717185.png'><img src="/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216232717185.png" alt="steamcommunity 302"></p>
+</li>
+</ul>
+<h2 id="实用教程：创建你的第一个-GitHub-项目"><a href="#实用教程：创建你的第一个-GitHub-项目" class="headerlink" title="实用教程：创建你的第一个-GitHub-项目"></a>实用教程：创建你的第一个 GitHub 项目</h2>
+<h3 id="注册-GitHub-账户"><a href="#注册-GitHub-账户" class="headerlink" title="注册-GitHub-账户"></a>注册 GitHub 账户</h3>
+<ol>
+<li>
+<p>访问 <a target="_blank" rel="noopener" href="https://github.com/">GitHub 官网</a></p>
+</li>
+<li>
+<p>点击 “Sign up” 按钮</p>
+<p class='item-img' data-src='/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216225627877.png'><img src="/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216225627877.png" alt="首页"></p>
+</li>
+<li>
+<p>填写用户名、邮箱和密码</p>
+<p class='item-img' data-src='/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216225026819.png'><img src="/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216225026819.png" alt="注册页面"></p>
+</li>
+<li>
+<p>完成邮箱验证</p>
+</li>
+</ol>
+<h3 id="创建并配置第一个仓库"><a href="#创建并配置第一个仓库" class="headerlink" title="创建并配置第一个仓库"></a>创建并配置第一个仓库</h3>
+<p><strong>步骤详解</strong>：</p>
+<ol>
+<li>点击右上角 “+” 图标，选择 “New repository”</li>
+<li>输入仓库名称和描述</li>
+<li>选择公开（Public）或私有（Private）</li>
+<li>勾选 “Add a README file” 初始化文件</li>
+<li>点击 “Create repository” 完成创建</li>
+</ol>
+<h3 id="使用-Git-命令行基础操作"><a href="#使用-Git-命令行基础操作" class="headerlink" title="使用-Git-命令行基础操作"></a>使用 Git 命令行基础操作</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 克隆仓库到本地</span><br><span class="line">git clone https://github.com/username/repository.git</span><br><span class="line"></span><br><span class="line"># 添加修改文件</span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"># 提交更改</span><br><span class="line">git commit -m &quot;描述本次更改的内容&quot;</span><br><span class="line"></span><br><span class="line"># 推送到远程仓库</span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+<h2 id="图片预留位置与说明"><a href="#图片预留位置与说明" class="headerlink" title="图片预留位置与说明"></a>图片预留位置与说明</h2>
+<h3 id="GitHub-界面示意图"><a href="#GitHub-界面示意图" class="headerlink" title="GitHub-界面示意图"></a>GitHub 界面示意图</h3>
+<p class='item-img' data-src='/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216225627877.png'><img src="/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216225627877.png" alt="首页说明"></p>
+<p><em>图 1：GitHub 主界面和各功能区说明</em></p>
+<h3 id="仓库创建流程图示"><a href="#仓库创建流程图示" class="headerlink" title="仓库创建流程图示"></a>仓库创建流程图示</h3>
+<p class='item-img' data-src='/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216230112356.png'><img src="/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216230112356.png" alt="仓库创建流程1"></p>
+<p class='item-img' data-src='/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216230609415.png'><img src="/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216230609415.png" alt="仓库创建流程2"></p>
+<p><em>图 2：从零开始创建新仓库的完整流程</em></p>
+<h3 id="Markdown-渲染效果对比"><a href="#Markdown-渲染效果对比" class="headerlink" title="Markdown-渲染效果对比"></a>Markdown 渲染效果对比</h3>
+<p class='item-img' data-src='/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216230959387.png'><img src="/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216230959387.png" alt="对比"></p>
+<p><em>图 3：左侧为 Markdown 源代码，右侧为 GitHub 渲染效果</em></p>
+<h3 id="中国大陆访问解决方案示意图"><a href="#中国大陆访问解决方案示意图" class="headerlink" title="中国大陆访问解决方案示意图"></a>中国大陆访问解决方案示意图</h3>
+<p class='item-img' data-src='/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216231545259.png'><img src="/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216231545259.png" alt="编辑hosts"></p>
+<p class='item-img' data-src='/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216231808700.png'><img src="/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20251216231808700.png" alt="编辑hosts文件"></p>
+<p><em>图 4：编辑 hosts 文件的详细步骤演示</em></p>
+<h2 id="GitHub-高级功能与最佳实践"><a href="#GitHub-高级功能与最佳实践" class="headerlink" title="GitHub-高级功能与最佳实践"></a>GitHub 高级功能与最佳实践</h2>
+<h3 id="团队协作工作流"><a href="#团队协作工作流" class="headerlink" title="团队协作工作流"></a>团队协作工作流</h3>
+<p><strong>常用协作模式</strong>：</p>
+<ol>
+<li><strong>Fork &amp; Pull 流程</strong>：适合开源项目，外部贡献者使用</li>
+<li><strong>特性分支工作流</strong>：团队内部协作的标准模式</li>
+<li><strong>Gitflow 工作流</strong>：复杂项目的成熟协作方案</li>
+</ol>
+<h3 id="持续集成与部署"><a href="#持续集成与部署" class="headerlink" title="持续集成与部署"></a>持续集成与部署</h3>
+<p>GitHub 集成了丰富的 CI/CD 工具：</p>
+<ul>
+<li><strong>GitHub Actions</strong>：原生自动化平台</li>
+<li><strong>Travis CI</strong>：流行的持续集成服务</li>
+<li><strong>Jenkins</strong>：自建自动化服务器</li>
+</ul>
+<h3 id="安全最佳实践"><a href="#安全最佳实践" class="headerlink" title="安全最佳实践"></a>安全最佳实践</h3>
+<ol>
+<li><strong>使用 SSH 密钥认证</strong> 替代密码登录</li>
+<li><strong>定期审查第三方依赖</strong> 的安全性</li>
+<li><strong>配置分支保护规则</strong> 防止直接推送到主分支</li>
+<li><strong>启用双因素认证</strong> 增强账户安全</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+<p>GitHub 不仅是代码托管平台，更是全球开发者协作的核心社区。通过本教程，您应该已经掌握了：</p>
+<ul>
+<li>✅ GitHub 的基本概念和核心功能</li>
+<li>✅ Markdown 语法的全面应用</li>
+<li>✅ 解决中国大陆访问问题的多种方案</li>
+<li>✅ 项目创建和协作的基本流程</li>
+</ul>
+<blockquote>
+<p>[!TIP]</p>
+<p>精通 GitHub 需要实践和经验积累，建议从个人小项目开始，逐步探索更高级的功能。</p>
+</blockquote>
+<h2 id="附录：实用资源链接"><a href="#附录：实用资源链接" class="headerlink" title="附录：实用资源链接"></a>附录：实用资源链接</h2>
+<h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.github.com/">GitHub 官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/doc">Git 官方手册</a></li>
+</ul>
+<h3 id="学习资源"><a href="#学习资源" class="headerlink" title="学习资源"></a>学习资源</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://skills.github.com/">GitHub Skills</a>- 交互式学习平台</li>
+<li><a target="_blank" rel="noopener" href="http://git-school.github.io/visualizing-git/">Visualizing Git</a>- 图形化理解 Git 概念</li>
+</ul>
+<h3 id="中文社区支持"><a href="#中文社区支持" class="headerlink" title="中文社区支持"></a>中文社区支持</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/explore">GitHub 中文社区</a>- 探索中文项目</li>
+<li>[国内技术论坛] - 解决特定使用问题</li>
+</ul>
+<hr>
+<p><em>本文档最后更新日期：2025年12月16日</em></p>
+<p><em>欢迎通过提交 Issue 或 Pull Request 来帮助改进本文档</em></p>
+<hr>
+<p><strong>文章作者:</strong> [<a href="https://yjh021.github.io/">Blue Eagle</a>]</p>
+<p><strong>文章链接:</strong> [<a href="https://yjh021.github.io/2025/12/16/GitHub%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">https://yjh021.github.io/2025/12/16/GitHub使用教程/</a>]</p>
+<p><strong>版权声明:</strong> 本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 [<a href="https://yjh021.github.io/">Blue Eagle</a>]</p>
+<hr>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/01/24/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81%E5%9F%BA%E7%A1%80/">← Next 华为认证基础</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">MySQL课程笔记 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Blue Eagle</a></h1><div id="description"><p>Blue Eagle的技术博客 | 专注Web全栈开发、JavaScript、MySQL、Python实战教程。分享Hexo博客搭建、前端框架、后端API开发、数据库优化及编程技巧。提供高质量技术文章和项目经验分享。</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">GitHub 简介与完整使用指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-GitHub%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是 GitHub？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">GitHub 核心功能详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%EF%BC%88Repository%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">仓库（Repository）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%EF%BC%88Branching%EF%BC%89%E4%B8%8E%E5%90%88%E5%B9%B6%EF%BC%88Merging%EF%BC%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">分支（Branching）与合并（Merging）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E4%BD%9C%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.3.</span> <span class="toc-text">协作功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown-%E5%9C%A8-GitHub-%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">Markdown 在 GitHub 中的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%AF%AD%E6%B3%95"><span class="toc-number">1.3.1.</span> <span class="toc-text">基础格式化语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">文本样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E5%B1%82%E7%BA%A7"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">标题层级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">列表格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">高级功能示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E5%88%9B%E5%BB%BA"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">表格创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">代码高亮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E5%92%8C%E5%9B%BE%E5%BD%A2"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">图表和图形</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86%E5%9C%B0%E5%8C%BA-GitHub-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.4.</span> <span class="toc-text">中国大陆地区 GitHub 访问解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-Hosts-%E6%96%87%E4%BB%B6%EF%BC%88%E7%9B%B4%E6%8E%A5%E6%9C%89%E6%95%88%EF%BC%89"><span class="toc-number">1.4.1.</span> <span class="toc-text">修改 Hosts 文件（直接有效）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%95%9C%E5%83%8F%E7%AB%99%E7%82%B9%E8%AE%BF%E9%97%AE"><span class="toc-number">1.4.2.</span> <span class="toc-text">使用镜像站点访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E5%92%8C%E4%BB%A3%E7%90%86"><span class="toc-number">1.4.3.</span> <span class="toc-text">使用开发者工具和代理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#steamcommunity-302"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">steamcommunity 302</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%9A%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA-GitHub-%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.5.</span> <span class="toc-text">实用教程：创建你的第一个 GitHub 项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C-GitHub-%E8%B4%A6%E6%88%B7"><span class="toc-number">1.5.1.</span> <span class="toc-text">注册 GitHub 账户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93"><span class="toc-number">1.5.2.</span> <span class="toc-text">创建并配置第一个仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Git-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.3.</span> <span class="toc-text">使用 Git 命令行基础操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E9%A2%84%E7%95%99%E4%BD%8D%E7%BD%AE%E4%B8%8E%E8%AF%B4%E6%98%8E"><span class="toc-number">1.6.</span> <span class="toc-text">图片预留位置与说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub-%E7%95%8C%E9%9D%A2%E7%A4%BA%E6%84%8F%E5%9B%BE"><span class="toc-number">1.6.1.</span> <span class="toc-text">GitHub 界面示意图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%E5%88%9B%E5%BB%BA%E6%B5%81%E7%A8%8B%E5%9B%BE%E7%A4%BA"><span class="toc-number">1.6.2.</span> <span class="toc-text">仓库创建流程图示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-%E6%B8%B2%E6%9F%93%E6%95%88%E6%9E%9C%E5%AF%B9%E6%AF%94"><span class="toc-number">1.6.3.</span> <span class="toc-text">Markdown 渲染效果对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%A4%BA%E6%84%8F%E5%9B%BE"><span class="toc-number">1.6.4.</span> <span class="toc-text">中国大陆访问解决方案示意图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.7.</span> <span class="toc-text">GitHub 高级功能与最佳实践</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-number">1.7.1.</span> <span class="toc-text">团队协作工作流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2"><span class="toc-number">1.7.2.</span> <span class="toc-text">持续集成与部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.7.3.</span> <span class="toc-text">安全最佳实践</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.8.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95%EF%BC%9A%E5%AE%9E%E7%94%A8%E8%B5%84%E6%BA%90%E9%93%BE%E6%8E%A5"><span class="toc-number">1.9.</span> <span class="toc-text">附录：实用资源链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-number">1.9.1.</span> <span class="toc-text">官方文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90"><span class="toc-number">1.9.2.</span> <span class="toc-text">学习资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E6%94%AF%E6%8C%81"><span class="toc-number">1.9.3.</span> <span class="toc-text">中文社区支持</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">©</span><span class="icp-content">2025 Blue Eagle All rights reserved.</span></nobr><br><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

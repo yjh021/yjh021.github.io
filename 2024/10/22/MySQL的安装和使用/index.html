@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MySQL的安装和使用 | Blue Eagle's Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Blue Eagle's Blog" type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>MySQL的安装和使用</h1></div><hr><div id="post-content"><h1>MySQL的安装和使用</h1>
+<h2 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h2>
+<p><strong>MySQL的安装有两种方式：</strong></p>
+<ul>
+<li><strong>解压配置方式</strong></li>
+</ul>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022132108868-1729574789233-4.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022132108868-1729574789233-4.png" alt="解压配置方式"></p>
+<ul>
+<li><strong>步骤安装方式</strong></li>
+</ul>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022132220573.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022132220573.png" alt="步骤安装方式"></p>
+<h3 id="安装包下载-解压版"><a href="#安装包下载-解压版" class="headerlink" title="安装包下载-解压版"></a>安装包下载-解压版</h3>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022132437925-1729574796990-7.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022132437925-1729574796990-7.png" alt="安装包下载-解压版"></p>
+<h4 id="解压软件包"><a href="#解压软件包" class="headerlink" title="解压软件包"></a>解压软件包</h4>
+<p>将MySQL软件包解压在没有中文和空格的目录下</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022164017599.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022164017599.png" alt="解压软件包"></p>
+<h4 id="设置配置文件"><a href="#设置配置文件" class="headerlink" title="设置配置文件"></a>设置配置文件</h4>
+<p>在解压目录创建my.ini文件并添加内容如下：</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022164457895.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022164457895.png" alt="创建my.ini文件"></p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022164625165.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022164625165.png" alt="设置配置文件"></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 设置3306端口</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"><span class="comment"># 服务端使用的字符集默认为UTF8</span></span><br><span class="line"><span class="attr">character-set-server</span>=utf8</span><br><span class="line"><span class="comment"># 创建新表时将使用的默认存储引擎</span></span><br><span class="line"><span class="attr">default-storage-engine</span>=INNODB</span><br><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端默认字符集</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8</span><br><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端连接服务端时默认使用的端口</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8</span><br></pre></td></tr></table></figure>
+<h4 id="配置系统环境"><a href="#配置系统环境" class="headerlink" title="配置系统环境"></a>配置系统环境</h4>
+<p>①在【我的电脑】或【此电脑】右键，选择【属性】</p>
+<p>②选择【高级系统设置】</p>
+<p>③选择【高级】-》【环境变量】</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022171449187.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022171449187.png" alt="配置系统环境"></p>
+<p>④<strong>将MYSQL_HOME添加到PATH环境变量</strong></p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022172418123.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022172418123.png" alt="将MYSQL_HOME添加到PATH环境变量"></p>
+<h4 id="服务操作"><a href="#服务操作" class="headerlink" title="服务操作"></a>服务操作</h4>
+<p>使用管理员权限进入DOS，在cmd中，进入解压目录下的bin目录依次执行以下命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># ①对mysql进行初始化，请注意，这里会生产一个临时密码，后边要使用这个临时密码</span><br><span class="line">  mysqld --initialize --user=mysql --console</span><br><span class="line"># ②安装mysql服务</span><br><span class="line">    mysqld --install</span><br><span class="line"># ③启动mysql服务</span><br><span class="line">   <span class="built_in">net</span> <span class="built_in">start</span> mysql</span><br><span class="line"># ④登录mysql，这里需要使用之前生成的临时密码</span><br><span class="line"> mysql -uroot -p</span><br><span class="line"># ⑤修改root用户密码</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;<span class="number">123456</span>&#x27;;</span><br><span class="line"># ⑤修改root用户权限</span><br><span class="line">create user &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;<span class="number">123456</span>&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022174700462.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022174700462.png" alt="修改用户名和密码"></p>
+<h3 id="安装包下载-安装版"><a href="#安装包下载-安装版" class="headerlink" title="安装包下载-安装版"></a>安装包下载-安装版</h3>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/installer/">https://downloads.mysql.com/archives/installer/</a></p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180857695.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180857695.png" alt="安装包下载-安装版"></p>
+<h4 id="按照步骤安装"><a href="#按照步骤安装" class="headerlink" title="按照步骤安装"></a>按照步骤安装</h4>
+<p>第一步：</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022175928758.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022175928758.png" alt="第一步"></p>
+<p>第二步：此后按照流程安装即可，遇到<code>Next</code>（下一步）直接点击即可：</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180024758.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180024758.png" alt="第二步"></p>
+<p>第三步：点击<code>Execute</code>后需要等待几分钟。</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180107166.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180107166.png" alt="第三步"></p>
+<p>第四步：当所有的状态都变成Complete之后，点击 Next：</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180137457.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180137457.png" alt="第四步"></p>
+<p>第五步：</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180200990.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180200990.png" alt="第五步"></p>
+<p>第六步：</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180241719.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180241719.png" alt="第六步"></p>
+<p>第七步：</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180320443.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180320443.png" alt="第七步"></p>
+<p>第八步：此处输入密码务必记住，用于之后登陆数据库，建议将密码设置为：123456</p>
+<p class='item-img' data-src='/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180350873.png'><img src="/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20241022180350873.png" alt="第八步"></p>
+<p>第九步：再按照  <strong>安装包下载-解压版</strong>  中的方法添加环境变量，步骤均为一样。</p>
+<hr>
+<p>以上两个安装方法，都可以在以管理员运行的 cmd 窗口中使用：<code>mysql -uroot -p</code>   来验证是否安装成功 。</p>
+<p><strong>本篇文章的目的是为了方便查阅和学习。</strong></p>
+<hr>
+<p><strong>文章作者:</strong> [<a href="https://yjh021.github.io/">Blue Eagle</a>]</p>
+<p><strong>文章链接:</strong> [<a href="https://yjh021.github.io/2024/10/22/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">https://yjh021.github.io/2024/10/22/MySQL的安装和使用/</a>]</p>
+<p><strong>版权声明:</strong> 本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 [<a href="https://yjh021.github.io/">Blue Eagle</a>]</p>
+<hr>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/12/08/MySQL%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">← Next MySQL课程笔记</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/10/08/hello-world/">Hello World Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Blue Eagle</a></h1><div id="description"><p>Blue Eagle的技术博客 | 专注Web全栈开发、JavaScript、MySQL、Python实战教程。分享Hexo博客搭建、前端框架、后端API开发、数据库优化及编程技巧。提供高质量技术文章和项目经验分享。</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">MySQL的安装和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">安装方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD-%E8%A7%A3%E5%8E%8B%E7%89%88"><span class="toc-number">1.1.1.</span> <span class="toc-text">安装包下载-解压版</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%8E%8B%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">解压软件包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">设置配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">配置系统环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">服务操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD-%E5%AE%89%E8%A3%85%E7%89%88"><span class="toc-number">1.1.2.</span> <span class="toc-text">安装包下载-安装版</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E7%85%A7%E6%AD%A5%E9%AA%A4%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">按照步骤安装</span></a></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">©</span><span class="icp-content">2025 Blue Eagle All rights reserved.</span></nobr><br><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
