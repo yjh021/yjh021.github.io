@@ -35,11 +35,11 @@
     <category term="实验" scheme="https://yjh021.github.io/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/%E5%AE%9E%E9%AA%8C/"/>
     
     
+    <category term="学习笔记" scheme="https://yjh021.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
     <category term="网络" scheme="https://yjh021.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     
     <category term="数通" scheme="https://yjh021.github.io/tags/%E6%95%B0%E9%80%9A/"/>
-    
-    <category term="学习笔记" scheme="https://yjh021.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -69,9 +69,9 @@
     <category term="教程" scheme="https://yjh021.github.io/categories/GitHub/%E5%8D%9A%E5%AE%A2/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="教程" scheme="https://yjh021.github.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="博客" scheme="https://yjh021.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="教程" scheme="https://yjh021.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -127,11 +127,11 @@
     <category term="MySQL" scheme="https://yjh021.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
     
     
-    <category term="博客" scheme="https://yjh021.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
     <category term="SQL" scheme="https://yjh021.github.io/tags/SQL/"/>
     
     <category term="数据库管理" scheme="https://yjh021.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="博客" scheme="https://yjh021.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
@@ -201,11 +201,11 @@
     <category term="MySQL" scheme="https://yjh021.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
     
     
-    <category term="博客" scheme="https://yjh021.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
     <category term="SQL" scheme="https://yjh021.github.io/tags/SQL/"/>
     
     <category term="数据库管理" scheme="https://yjh021.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="博客" scheme="https://yjh021.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
